@@ -1,0 +1,35 @@
+py info("Current links\n")
+m ping -c 1 srv
+links
+
+sh sleep 10
+
+py info("Moving from AP11 -> AP12\n")
+py ap11.moveHost(m,ap11,ap12)
+m ping -c 2 srv
+links
+
+sh sleep 10
+
+py info("Moving from AP12 -> AP21\n")
+py ap11.moveHost(m,ap12,ap21)
+m ifconfig m-eth0 192.168.222.3 netmask 255.255.255.0
+m route add default gw 192.168.222.1 m-eth0
+m ping -c 2 srv
+links
+
+sh sleep 10
+
+py info("Moving from AP21 -> AP22\n")
+py ap11.moveHost(m,ap21,ap22)
+m ping -c 2 srv
+links
+
+sh sleep 10
+
+py info("Moving from AP22 -> AP11\n")
+py ap11.moveHost(m,ap22,ap11)
+m ifconfig m-eth0 192.168.111.3 netmask 255.255.255.0
+m route add default gw 192.168.111.1 m-eth0
+m ping -c 2 srv
+links

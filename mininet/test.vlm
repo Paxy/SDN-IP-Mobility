@@ -1,0 +1,7 @@
+
+# VLC media player VLM command batch
+# http://www.videolan.org/vlc/
+
+new Stream sample vod enabled
+setup Stream sample input "file:///mnt/win/Users/Public/Music/Sample%20Music/Kalimba.mp3"
+setup Stream sample option file-caching=300

@@ -1,0 +1,6 @@
+DEVICE=eth1
+TYPE="OVSPort"
+DEVICETYPE="ovs"
+OVS_BRIDGE="br-dist"
+ONBOOT="yes"
+NM_CONTROLLED="no"

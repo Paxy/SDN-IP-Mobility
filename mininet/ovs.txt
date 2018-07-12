@@ -1,0 +1,2 @@
+ovs-ofctl dump-flows cr1
+ovs-vsctl show 
